@@ -10,7 +10,6 @@ namespace DatingApp.API.Dtos
         
         [Required]
         [StringLength(10,MinimumLength = 4 , ErrorMessage = "You must specify password length 4 to 10" )]
-
         public string  Password { get; set; }
     }
 }
