@@ -12,6 +12,7 @@ namespace DatingApp.API.Controllers
     [Authorize]
     //http:localhost:5000/api/values 
     [Route("api/[controller]")]
+    //this will tell the exact place data comming from
     [ApiController]
     public class ValuesController : ControllerBase
     {

@@ -12,21 +12,28 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace DatingApp.API.Controllers
 {
-    
+
+    //31 episode    
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
+
+        //inject newly created repo : episode 31
         private IAuthRepository _repo { get; }
+        //
         private readonly IConfiguration _confg;
         public AuthController(IAuthRepository repo, IConfiguration confg)
         {
             this._confg = confg;
             _repo = repo;
         }
+
         [HttpPost("register")]
+        //we are using DTO to parse into register method 
         public async Task<IActionResult> Register(UserForRegisterDtos userForRegisterDtos)
         {
+            //episode 31 - 
             //validate request 
             userForRegisterDtos.Username = userForRegisterDtos.Username.ToLower();
 
