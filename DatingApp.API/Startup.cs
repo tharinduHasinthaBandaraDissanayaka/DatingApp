@@ -35,7 +35,11 @@ namespace DatingApp.API
             (Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddCors();
+            
+            /* clip 30 - addscoped service is created onece for request : 
+            within singlton : one instance for each web request not like singlton */
             services.AddScoped<IAuthRepository,AuthRepository>();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer( options => {
                 options.TokenValidationParameters = new TokenValidationParameters
